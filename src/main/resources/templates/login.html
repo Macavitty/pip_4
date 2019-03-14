@@ -30,7 +30,8 @@
                 <span class="login-span">password:</span>
                 <input type="password" class="text" id="password" name="password"/>
             </label>
-<br/>
+<!--                       <span v-if="error">{{error}}</span>-->
+            <br/>
             <input type="submit" value="Войти"/>
         </form>
     </div>
@@ -42,7 +43,7 @@
     let app = new Vue({
         el: '#app',
         data: {
-            message: magic_data.message
+            message: magic_data.error
         }
 
     });
