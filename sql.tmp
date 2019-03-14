@@ -1,11 +1,12 @@
 create table spring_user(
   username varchar(100) primary key,
   password varchar(100) not null
-)
+);
 
 create table spring_check(
   check_id serial primary key,
-  x real not null, y real not null,
+  x real not null,
+  y real not null,
   r real not null,
   shooter varchar(100) not null,
   is_in_area boolean not null
