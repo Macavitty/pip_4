@@ -42,11 +42,12 @@
 
 <template id="form-template">
     <div id="container">
-        <form class="block" method="post" action="/logout">
-            <input type="submit" value="Выйти" align="center"/>
-        </form>
+        <div id="logout_area">
+            <form class="block" method="post" action="/logout">
+                <input type="submit" value="Выйти" />
+            </form></div>
         <div id="canvas_area">
-            <canvas id="canvas" width=window.innerWidth/2 height=window.innerHeight/2 @click="eventCanvas">
+            <canvas id="canvas" width=window.innerWidth/1.7 height=window.innerHeight/1.7 @click="eventCanvas">
                 Sorry, canvas not supported
             </canvas>
         </div>
@@ -95,7 +96,7 @@
         </div>
 
 
-        <div id="table_area">
+        <div id="table_area" style="overflow-y:auto;">
             <table id="history_table">
                 <tr>
                     <th>Координата X</th>
@@ -264,16 +265,15 @@
                 let h = canvas.height;
                 let tickStep = w / 12;
                 let results = this.results.slice();
-                console.log(results)// достаем точки из стора
                 for (let i = 0; i < results.length; i++) {
                     let result = results[i];
                     let x = result.x;
                     let y = result.y;
                     let res = result.isInArea;
                     if (res === true)
-                        ctx.fillStyle = "#42cd21";
+                        ctx.fillStyle = "#1906cd";
                     else
-                        ctx.fillStyle = "#c60a22";
+                        ctx.fillStyle = "#050200";
                     ctx.beginPath();
                     let x_on_canvas = this.get_pos_on_canvas(x, w);
                     let y_on_canvas = this.get_pos_on_canvas(y * (-1), h);
@@ -320,8 +320,8 @@
                 let ctx = canvas.getContext('2d');
                 let foo = window.innerWidth;
                 if (foo > window.innerHeight) foo = window.innerHeight;
-                canvas.width = foo / 1.5;
-                canvas.height = foo / 1.5;
+                canvas.width = foo / 1.7;
+                canvas.height = foo / 1.7;
                 let w = canvas.width;
                 let h = canvas.height;
                 let tickStep = w / 12;

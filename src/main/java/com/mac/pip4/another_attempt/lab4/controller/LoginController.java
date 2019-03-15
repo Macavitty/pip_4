@@ -24,14 +24,14 @@ public class LoginController {
     }
 
     @RequestMapping("/login")
-    public String login(Model model,
-                        @RequestParam(value = "error", required = false) String error
+    public String login(Model model
+//                        @RequestParam(value = "error", required = false) String error
     ) {
-
-        Map<Object, Object> dataForFront = new HashMap<>();
-        dataForFront.put("error", error == null ? null : "Try again pleace");
-
-        model.addAttribute("magic_data", dataForFront);
+//
+//        Map<Object, Object> dataForFront = new HashMap<>();
+//        dataForFront.put("error", error == null ? "" : "Try again please");
+//
+//        model.addAttribute("magic_data", dataForFront);
         return "login";
 
     }

@@ -7,6 +7,7 @@
     <script th:inline="javascript">const magic_data = [[${magic_data}]];</script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/elems.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="icon" href="/img/duck.png">
     <title>Login</title>
 </head>
@@ -30,7 +31,7 @@
                 <span class="login-span">password:</span>
                 <input type="password" class="text" id="password" name="password"/>
             </label>
-<!--                       <span v-if="error">{{error}}</span>-->
+<!--                       <span v-if="error!==0">{{error}}</span>-->
             <br/>
             <input type="submit" value="Войти"/>
         </form>
@@ -42,9 +43,9 @@
     });
     let app = new Vue({
         el: '#app',
-        data: {
-            message: magic_data.error
-        }
+        // data: {
+        //     error: magic_data.error
+        // }
 
     });
 </script>
