@@ -1,23 +1,18 @@
 package com.mac.pip4.another_attempt.lab4.controller;
 
 import com.mac.pip4.another_attempt.lab4.model.User;
-import com.mac.pip4.another_attempt.lab4.repository.CheckRepository;
 import com.mac.pip4.another_attempt.lab4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManagerFactory;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("user")
 public class UserController {
-//
+
 //    @Autowired
 //    PasswordEncoder passwordEncoder;
 //
@@ -62,10 +57,6 @@ public class UserController {
 //            return "{\"error\": we already have user \"" + username + "\"}";
 //        }
 //    }
-
-
-
-
     // =============================
 
     private final PasswordEncoder passwordEncoder;
